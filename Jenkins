@@ -15,6 +15,12 @@ pipeline
 				git branch:"main", url:"git@github.com:vs1ms24mc107-wq/final.git"
 			}
 		}
+		stage('Build JAR') {
+    	steps {
+       			 sh 'mvn clean package -DskipTests'
+    }
+}
+
 		stage('Build image')
 		{
 			steps
